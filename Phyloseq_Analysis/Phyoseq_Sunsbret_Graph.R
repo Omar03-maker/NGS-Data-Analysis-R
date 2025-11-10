@@ -18,9 +18,9 @@ library("sunburstR")
 
 
 # UPLOAD FILES : 
-OTU_MAT <- read_excel("C:/Users/USER/Documents/DIC_G2B/DIC2/DIC2_G2B_2025/VISULAISATION_NGS/Table_OTU.xlsx", sheet = "OTU_Counts")
-TAX_MAT <- read_excel("C:/Users/USER/Documents/DIC_G2B/DIC2/DIC2_G2B_2025/VISULAISATION_NGS/Table_taxonomy.xlsx", sheet = "taxonenew")
-SAMPLES_DF <- read_excel("C:/Users/USER/Documents/DIC_G2B/DIC2/DIC2_G2B_2025/VISULAISATION_NGS/Table_sample.xlsx", sheet = "sample")
+OTU_MAT <- read_excel("Chemin vers /Table_OTU.xlsx", sheet = "OTU_Counts")
+TAX_MAT <- read_excel("Chemin vers /Table_taxonomy.xlsx", sheet = "taxonenew")
+SAMPLES_DF <- read_excel("Chemin vers /Table_sample.xlsx", sheet = "sample")
 
 head(OTU_MAT)
 head(TAX_MAT)
@@ -162,4 +162,5 @@ create_simple_interactive_sunburst <- function(Phylo, sample_name = NULL, top_n 
 # Usage simple:
 fig_interactive <- create_simple_interactive_sunburst(CARBOM, sample_name = "P01", top_n = 50)
 fig_interactive
+
 
