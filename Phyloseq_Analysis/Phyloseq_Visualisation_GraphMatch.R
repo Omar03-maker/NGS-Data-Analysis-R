@@ -26,9 +26,9 @@ library("ggdendro")
 library("pheatmap")
 
 # CHARGEMENT DES DONNÉES (adaptez les chemins selon votre système)
-OTU_MAT <- read_excel("C:/Users/USER/Documents/DIC_G2B/DIC2/DIC2_G2B_2025/VISULAISATION_NGS/Table_OTU.xlsx", sheet = "OTU_Counts")
-TAX_MAT <- read_excel("C:/Users/USER/Documents/DIC_G2B/DIC2/DIC2_G2B_2025/VISULAISATION_NGS/Table_taxonomy.xlsx")
-SAMPLES_DF <- read_excel("C:/Users/USER/Documents/DIC_G2B/DIC2/DIC2_G2B_2025/VISULAISATION_NGS/Table_sample.xlsx", sheet = "sample")
+OTU_MAT <- read_excel("Chemin vers /Table_OTU.xlsx", sheet = "OTU_Counts")
+TAX_MAT <- read_excel("Chemin vers /Table_taxonomy.xlsx")
+SAMPLES_DF <- read_excel("Chemin vers /Table_sample.xlsx", sheet = "sample")
 
 # PRÉPARATION DES DONNÉES POUR PHYLOSEQ
 OTU_MAT <- OTU_MAT %>% tibble::column_to_rownames("OTU")
