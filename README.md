@@ -13,7 +13,7 @@ Ce repository contient un pipeline complet pour l'analyse et la visualisation de
 - Analyse de diversité alpha (Shannon, Simpson, Chao1)
 - Analyse de diversité beta (PCoA, NMDS)
 - Visualisations : barplots, heatmaps, etc
-## 👤 Auteur
+## Auteur
 - El Hadji Omar Dia
 - GitHub: @Omar03-maker
 # ⭐ N'oubliez pas donner une étoile au repo ! 
