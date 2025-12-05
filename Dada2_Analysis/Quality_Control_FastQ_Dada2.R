@@ -17,13 +17,11 @@ path <- "Chemin vers /miseqsopdata"
 list.files(path)
 
 # RÉCUPÉRER LES FICHIERS R1 ET R2 SÉPARÉMENT
-# Les fichiers dans le dossiers miseqsopdata sont des exemples : 
-## - Reads forwards : F_filt.fastq.gz
-## - Reads Reverse : R_filt.fastq.gz
+# Les fichiers dans le dossiers miseqsopdata sont des exemples R1_001.fastq (Reads F) et R2_001.fastq (Reads R) : 
 fnFs <- sort(list.files(path, pattern="_R1_001.fastq", full.names = TRUE))
 fnRs <- sort(list.files(path, pattern="_R2_001.fastq", full.names = TRUE))
 
-# Fonction modifiée pour créer un graphique de qualité avec zones colorées et légende sur le côté
+# Fonction pour créer le graphique de controle de la qualité 
 add_quality_zones <- function(p) {
   plot_data <- ggplot_build(p)$data[[1]]
   x_min <- min(plot_data$x)
@@ -67,6 +65,8 @@ p_final <- add_quality_zones (p)
 print(p_final)
 
 # DÉFINIR LES CHEMINS DE SORTIE
+## - Reads forwards : F_filt.fastq.gz (R1_001.fastq filtered) 
+## - Reads Reverse : R_filt.fastq.gz (R1_001.fastq filtered)
 filtFs <- file.path(path, "filtered", paste0(sample.names, "_F_filt.fastq.gz"))
 filtRs <- file.path(path, "filtered", paste0(sample.names, "_R_filt.fastq.gz"))
 
