@@ -1,4 +1,4 @@
-# PACKAGES REQUIS
+t# Package prérequis
 if (!require("phyloseq")) install.packages("phyloseq")
 if (!require("readxl")) install.packages("readxl")
 if (!require("ggplot2")) install.packages("ggplot2")
@@ -11,7 +11,7 @@ if (!require("grid")) install.packages("grid")
 if (!require("gtable")) install.packages("gtable")
 if (!require("ggdendro")) install.packages("ggdendro")
 if (!require("pheatmap")) install.packages("pheatmap")
-# Charge Package 
+# Chargement des packages 
 library("phyloseq")
 library("readxl")
 library("ggplot2")
@@ -25,7 +25,7 @@ library("gtable")
 library("ggdendro")
 library("pheatmap")
 
-# CHARGEMENT DES DONNÉES (adaptez les chemins selon votre système)
+# CHARGEMENT DES DONNÉES (adaptez les chemins d'accès)
 OTU_MAT <- read_excel("Chemin vers /Table_OTU.xlsx", sheet = "OTU_Counts")
 TAX_MAT <- read_excel("Chemin vers /Table_taxonomy.xlsx")
 SAMPLES_DF <- read_excel("Chemin vers /Table_sample.xlsx", sheet = "sample")
@@ -44,7 +44,7 @@ Tax <- tax_table(TAX_MAT)
 SAMPLES <- sample_data(SAMPLES_DF)
 Phylo <- phyloseq(Otu, Tax, SAMPLES)
 
-# FONCTION POUR CALCULER LES ESPÈCES PARTAGÉES
+# FONCTION VOIR LES NIVEAUX TAXONOMIQUES PARTAGÉES
 calculate_shared_species <- function(phylo_obj, tax_level = "family", min_abundance = 1) {
   
   # Filtrer les taxa avec abondance minimale
@@ -86,7 +86,7 @@ calculate_shared_species <- function(phylo_obj, tax_level = "family", min_abunda
   
   return(shared_matrix)}
 
-# CRÉER LA HEATMAP POUR LES ESPECES  
+# CRÉATION DE LA HEATMAP 
 create_shared_species_heatmap <- function(phylo_obj, tax_level = "species", 
                                           min_abundance = 1, title = NULL) {
   
@@ -101,7 +101,7 @@ create_shared_species_heatmap <- function(phylo_obj, tax_level = "species",
   if (is.null(title)) {title <- paste(" GROUPE TAXONOMIQUE PARTAGES ", 
                                       stringr::str_to_title(tax_level))}
   
-  # Créer la heatmap
+  # Parametre de la heatmap
   p <- ggplot(melted_data, aes(x = Sample1, y = Sample2, fill = Shared_Species)) +
     geom_tile(color = "white", size = 0.1) +
     scale_fill_gradient2(low = "lightblue", mid = "steelblue", high = "darkblue",
