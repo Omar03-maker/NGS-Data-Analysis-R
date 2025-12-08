@@ -1,4 +1,4 @@
-# 🧬 Pipeline d'analyse et visualisation de données NGS avec R 
+# 🧬 Pipeline d'analyse et visualisation de données NGS
 ## Description
 Il s'agit d'une pipeline complet pour l'analyse et la visualisation de données de séquençage nouvelle génération (NGS) avec le logiciel. Elle utilise deux jeux de données d'exemple pour vous permettre de tester le workflow :
 - Données 16S rRNA d'échantillons microbiome intestinal de souris (Mothur MiSeq SOP)
