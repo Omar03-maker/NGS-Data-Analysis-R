@@ -1,3 +1,4 @@
+# AUTEUR = El Hadji Omar DIA
 # INSTALLATION DES PACKAGES 
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
@@ -222,3 +223,7 @@ plot_bar(phylum_counts_rel, x="Day", fill="Phylum") +
   facet_wrap(~When, scales="free_x") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   labs(x = "Jour", y = "Abondance relative", fill = "Phylum")
+                                             
+# AUTEUR = El Hadji Omar DIA
+
+                                             
